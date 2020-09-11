@@ -24,7 +24,6 @@ namespace PeopleSmartGrid
             services.AddControllersWithViews();
 
             services.AddSingleton<IDataContext, DataRepo>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

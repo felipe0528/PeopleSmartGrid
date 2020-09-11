@@ -29,6 +29,16 @@ namespace PeopleSmartGrid.Models
             };
 
             data.AddPerson(newPerson);
+
+            Person newPersonTwo = new Person
+            {
+                Id = 2,
+                Name = "Tatiana Perilla",
+                Type = 1,
+                Age = 30
+            };
+
+            data.AddPerson(newPersonTwo);
         }
     }
 }

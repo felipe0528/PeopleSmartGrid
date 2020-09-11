@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<PeopleSmartGrid.Models.Person>
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,7 +7,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table" id="yTable">
+<table class="table" id="myTable">
     <thead>
         <tr>
             <th onclick="sortTable(0)">
@@ -40,12 +39,16 @@
                 @Html.DisplayFor(modelItem => item.Age)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                @(item.Type==1? "Teacher": "Student")
             </td>
             <td>
-                <button asp-action="Details" class="btn btn-info" onclick="openWindow(@(item.Id))" asp-route-id="@item.Id">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i>
-                </button>
+                @if (item.Type==1)
+                {
+                    <button asp-action="Details" class="btn btn-info" onclick="openWindow(@(item.Id))" asp-route-id="@item.Id">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    </button>
+                }
+
                 <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
